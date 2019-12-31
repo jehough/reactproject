@@ -1,9 +1,9 @@
-class CreateFish < ActiveRecord::Migration[5.2]
+class CreateItems < ActiveRecord::Migration[5.2]
   def change
-    create_table :fish do |t|
+    create_table :items do |t|
       t.string :name
-      t.text :description
       t.integer :quantity
+      t.text :description
       t.decimal :price
       t.string :gender
 

@@ -1,2 +1,0 @@
-class FishController < ApplicationController
-end
