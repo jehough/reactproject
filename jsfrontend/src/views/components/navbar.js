@@ -4,7 +4,12 @@ export default class Navbar extends Component {
 
   render(){
     return(<nav className="navbar navbar-inverse">
-      <h1>a menu will go here</h1>
+      <div className="container-fluid">
+        <ul className="nav navbar-nav">
+          <li>Home</li>
+          <li>Categories</li>
+        </ul>
+      </div>
     </nav>)
   }
 }

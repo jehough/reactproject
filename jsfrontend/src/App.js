@@ -9,6 +9,7 @@ import Header from './views/components/header'
 import Home from './views/components/home'
 import Navbar from './views/components/navbar'
 import './App.css';
+import './bootstrap.css'
 
 function App() {
   return (
