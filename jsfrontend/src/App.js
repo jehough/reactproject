@@ -5,7 +5,8 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import Header from '../views/components/header'
+import Header from './views/components/header'
+import Home from './views/components/home'
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <Route exact path="/" component={Home} />
     </div>
+    </Router>
   );
 }
 
