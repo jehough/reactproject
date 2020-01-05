@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import Header from './views/components/header'
 import Home from './views/components/home'
+import Navbar from './views/components/navbar'
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <Router>
     <div className="App">
       <Header />
+      <Navbar />
       <Route exact path="/" component={Home} />
     </div>
     </Router>
