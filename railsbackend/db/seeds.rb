@@ -28,4 +28,17 @@ accessory = Subcategory.create(name: "Accessory", category: equipment)
 salee = Subcategory.create (name: "Equipment on Sale", category: equipment)
 
 
+
 #Initial Items
+gourami = Item.create(name: "Honey Gourami", quantity: 20, description: "Random stuff to get started", price: 7.99, gender: "N/A")
+gourami.image.attach(
+  io: File.open('/home/jim/Pictures/FishImages/HoneyGourami.jpg'),
+  filename: 'HoneyGourami.jpg',
+)
+community.items << gourami
+neon = Item.create(name: "Neon", quantity: 40, description: "Random stuff to get started", price: 2.99, gender: "N/A")
+gourami.image.attach(
+  io: File.open('/home/jim/Pictures/FishImages/neon-tetra.jpg'),
+  filename: 'neon-tetra.jpg',
+)
+community.items << neon
