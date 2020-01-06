@@ -9,7 +9,7 @@ fish = Category.create(name: "Fish and Marine Life")
 equipment = Category.create(name: "Equipment")
 
 # Fish Categories
-tropical = Subcategory.create(name: "Tropical Fish", category: fish)
+community = Subcategory.create(name: "Community Fish", category: fish)
 african = Subcategory.create(name: "African Ciclids", category: fish)
 south = Subcategory.create(name: "South American Ciclids", category: fish)
 salt = Subcategory.create(name: "Saltwater", category: fish)
