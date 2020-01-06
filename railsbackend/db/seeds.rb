@@ -10,8 +10,8 @@ equipment = Category.create(name: "Equipment")
 
 # Fish Categories
 community = Subcategory.create(name: "Community Fish", category: fish)
-african = Subcategory.create(name: "African Ciclids", category: fish)
-south = Subcategory.create(name: "South American Ciclids", category: fish)
+african = Subcategory.create(name: "African Cichlids", category: fish)
+south = Subcategory.create(name: "South American Cichlids", category: fish)
 salt = Subcategory.create(name: "Saltwater", category: fish)
 coral = Subcategory.create(name: "Coral and Live Rock", category: fish)
 koi = Subcategory.create(name: "Koi", category: fish)
@@ -36,9 +36,24 @@ gourami.image.attach(
   filename: 'HoneyGourami.jpg',
 )
 community.items << gourami
+
 neon = Item.create(name: "Neon", quantity: 40, description: "Random stuff to get started", price: 2.99, gender: "N/A")
 gourami.image.attach(
   io: File.open('/home/jim/Pictures/FishImages/neon-tetra.jpg'),
   filename: 'neon-tetra.jpg',
 )
 community.items << neon
+
+peacock = Item.create(name: "Red Sun Peacock Cichlid", quantity: 10, description: "Random stuff to get started", price: 12.99, gender: "Male")
+gourami.image.attach(
+  io: File.open('/home/jim/Pictures/FishImages/peacock.jpeg'),
+  filename: 'peacock.jpeg',
+)
+african.items << peacock
+
+frontosa = Item.create(name: "Frontosa Cichlid", quantity: 10, description: "Random stuff to get started", price: 12.99, gender: "Female")
+gourami.image.attach(
+  io: File.open('/home/jim/Pictures/FishImages/frontosa.jpeg'),
+  filename: 'frontosa.jpeg',
+)
+african.items << frontosa
