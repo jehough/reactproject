@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_31_025248) do
+ActiveRecord::Schema.define(version: 2020_01_06_131232) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer "cart_id"
@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(version: 2019_12_31_025248) do
     t.integer "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "subcategory_id"
     t.index ["category_id"], name: "index_item_categories_on_category_id"
     t.index ["item_id"], name: "index_item_categories_on_item_id"
+    t.index ["subcategory_id"], name: "index_item_categories_on_subcategory_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -55,10 +57,15 @@ ActiveRecord::Schema.define(version: 2019_12_31_025248) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "subcategories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.boolean "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
