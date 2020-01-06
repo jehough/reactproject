@@ -1,15 +1,23 @@
 import React, {Component} from 'react';
-
-export default class Navbar extends Component {
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+export default class Navigation extends Component {
 
   render(){
-    return(<nav className="navbar navbar-dark bg-primary" >
-      <div className="collapse navbar-collapse">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item">Home</li>
-          <li className="nav-item">Categories</li>
-        </ul>
-      </div>
-    </nav>)
+    return(<Navbar bg="primary" expand="lg">
+          <Navbar.Brand href="#home">Little Ocean Shop</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <NavDropdown title="Categories" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#category1">Fish</NavDropdown.Item>
+              <NavDropdown.Item href="#category2">Equipment</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+  )
   }
 }
