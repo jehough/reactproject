@@ -5,7 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 export default class Navigation extends Component {
 
   render(){
-    return(<Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+    return(<Navbar variant="light" expand="lg" sticky="top">
           <Navbar.Brand href="#home">Little Ocean Shop</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
