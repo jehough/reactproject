@@ -8,6 +8,7 @@ import {
 import Header from './views/components/header'
 import Home from './views/components/home'
 import Navbar from './views/components/navbar'
+import Categories from './views/containers/categories'
 import './App.css';
 import './bootstrap.css'
 
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Route exact path="/" component={Home} />
+      <Route path="/categories" component={Categories}
     </div>
     </Router>
   );
