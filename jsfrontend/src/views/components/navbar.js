@@ -3,11 +3,11 @@ import React, {Component} from 'react';
 export default class Navbar extends Component {
 
   render(){
-    return(<nav className="navbar navbar-inverse">
-      <div className="container-fluid">
-        <ul className="nav navbar-nav">
-          <li>Home</li>
-          <li>Categories</li>
+    return(<nav className="navbar navbar-dark bg-primary" >
+      <div className="collapse navbar-collapse">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">Home</li>
+          <li className="nav-item">Categories</li>
         </ul>
       </div>
     </nav>)
