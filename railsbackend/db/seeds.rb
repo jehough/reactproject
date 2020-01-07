@@ -25,7 +25,7 @@ filter = Subcategory.create(name: "Filtration and Sumps", category: equipment)
 rock = Subcategory.create(name: "Gravel and Sand", category: equipment)
 decor = Subcategory.create(name: "Aquarium Decoration", category: equipment)
 accessory = Subcategory.create(name: "Accessory", category: equipment)
-salee = Subcategory.create (name: "Equipment on Sale", category: equipment)
+salee = Subcategory.create(name: "Equipment on Sale", category: equipment)
 
 
 
@@ -72,7 +72,7 @@ ram.image.attach(
 )
 south.items << ram
 
-sale.items << jack
+salef.items << jack
 
 tengal = Item.create(name: "Ten Gallon Kit", quantity: 15, description: "Random stuff to get started", price: 25.99, gender: "N/A")
 tengal.image.attach(
@@ -87,3 +87,5 @@ twengal.image.attach(
   filename: 'twengal.jpeg',
 )
 aquarium.items << twengal
+
+salee.items << tengal
