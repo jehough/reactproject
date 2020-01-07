@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ItemList from '../components/item_list.js'
+
 import {
   BrowserRouter as Router,
   Link,
@@ -13,11 +13,11 @@ export default class Items extends Component {
     }
   }
 
- }
+  
   render(){
     return(<div>
-      <h1>Category: {this.props.title}</h1>
-      <ItemList path={this.props.match.path} list={this.state.list} divison={this.props.division}/>
+      <p>This is where the items will go</p>
+      <p>{this.props.location.state.id}</p>
       </div>)
   }
 }

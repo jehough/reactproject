@@ -6,7 +6,7 @@ export default class CategoryList extends Component {
   render(){
     return(<div>
       <ul>
-      {this.props.list.map(category => <li key={category.id}><LinkDisplay category={category} path={this.props.division} /></li>)}
+      {this.props.list.map(category => <li key={category.id}><LinkDisplay category={category} path="categories" /></li>)}
       </ul>
     </div>)
   }

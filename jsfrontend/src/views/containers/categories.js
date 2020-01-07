@@ -5,6 +5,9 @@ import {
   Link,
   Route
 } from 'react-router-dom'
+import Items from './items'
+
+
 export default class Categories extends Component {
   constructor(){
     super()
@@ -21,8 +24,8 @@ export default class Categories extends Component {
   render(){
     return(<div>
       <h1>Category: {this.props.title}</h1>
-      <CategoryList path={this.props.match.path} list={this.state.list} divison={this.props.division}/>
-
+      <CategoryList path={this.props.match.path} list={this.state.list}/>
+      
       </div>)
   }
 }
