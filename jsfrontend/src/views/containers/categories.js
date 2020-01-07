@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import CategoryList from '../components/category_list.js'
 
 export default class Home extends Component {
   constructor(){
@@ -8,10 +9,15 @@ export default class Home extends Component {
     }
   }
 
-
+ componentDidMount(){
+   fetch(`http://localhost:4000/${this.props.division}`)
+     .then(resp=> resp.json())
+     .then(json => this.setState({list: json.data}))
+ }
   render(){
     return(<div>
       <h1>Category: {this.props.title}</h1>
+      <h3>{this.props.division}</h3>
       <CategoryList list={this.state.list}/>
       </div>)
   }
