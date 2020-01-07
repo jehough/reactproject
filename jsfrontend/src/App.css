@@ -40,3 +40,11 @@
 nav {
   background-color: #008b8b
 }
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 20px;
+}
