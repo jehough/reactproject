@@ -3,8 +3,8 @@ class SubcategoriesController < ApplicationController
   skip_before_action :authenticate_request
   def index
     subcategories = Subcategory.all
-    options = {include: [:subcategories]}
-    render json: subcategories, only: [:id, :name], include: [:category => {:only => [:id, :name]}]
+    options = {include: [:categories]}
+    render json: SubcategorySerializer.new(subcategories, options)
   end
 
 
