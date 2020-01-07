@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import {
   BrowserRouter as Router,
   Route,
   Switch
 } from 'react-router-dom';
-import Header from './views/components/header'
 import Home from './views/components/home'
 import Items from './views/containers/items'
 import Navbar from './views/components/navbar'

@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import CategoryList from '../components/category_list.js'
+import CategoryList from '../components/category_list.js';
+import DisplayTitle from '../components/title.js'
 import {
   BrowserRouter as Router,
   Link,
   Route
 } from 'react-router-dom'
 import Items from './items'
+
 
 
 export default class Categories extends Component {
@@ -23,9 +25,9 @@ export default class Categories extends Component {
  }
   render(){
     return(<div>
-      <h1>Category: {this.props.title}</h1>
-      <CategoryList path={this.props.match.path} list={this.state.list}/>
-      
+      <DisplayTitle title={this.props.title} />
+      <CategoryList list={this.state.list}/>
+
       </div>)
   }
 }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-
+import DisplayTitle from '../components/title.js'
+import ItemList from '../components/item_list.js'
 import {
   BrowserRouter as Router,
   Link,
@@ -13,11 +14,16 @@ export default class Items extends Component {
     }
   }
 
+  componentDidMount(){
+    fetch(`http://localhost:4000/categories/${this.props.location.state.id}`)
+      .then(resp=> resp.json())
+      .then(json => this.setState({list: json.data}))
+  }
 
   render(){
     return(<div>
-      <p>This is where the items will go</p>
-      <p>{this.props.location.state.id}</p>
+      <DisplayTitle title={this.props.location.state.name} />
+      <ItemList list={this.state.list} />
       </div>)
   }
 }

@@ -1,14 +1,15 @@
 import React from 'react'
-import {Link, Route} from 'react-router-dom'
-import Items from '../containers/items'
+import {Link} from 'react-router-dom'
+
 
 const LinkDisplay = (props) =>{
   return(
   <div>
   <Link to={{
-    pathname: `${props.path}/${props.category.id}`,
-    state: {id: props.category.id}
-  }}>{props.category.attributes.name}</Link>
+    pathname: `${props.path}/${props.object.id}`,
+    state: {id: props.object.id,
+            name: props.object.attributes.name}
+  }}>{props.object.attributes.name}</Link>
   </div>
 )
 }
