@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   post 'authenticate', to: 'authentication#authenticate'
   resources :categories, only: [:index]
   resources :subcategory, only: [:index]
+  get '/fish', to: 'categories#fish'
+  get '/equipment', to: 'categories#equipment'
 end
