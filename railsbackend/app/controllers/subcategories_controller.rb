@@ -4,7 +4,7 @@ class SubcategoriesController < ApplicationController
   def index
     subcategories = Subcategory.all
     options = {include: [:subcategories]}
-    render json: subcategories, only: [:id, :name]
+    render json: subcategories, only: [:id, :name], include: [:category => {:only => [:id, :name]}]
   end
 
 
