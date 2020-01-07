@@ -15,4 +15,9 @@ class CategoriesController < ApplicationController
     render json: CategorySerializer.new(categories)
   end
 
+  def show
+    category = Category.find(params[:id])
+    render json: ItemSerializer.new(category.items)
+  end
+
 end
