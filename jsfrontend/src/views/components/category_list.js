@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Link from './link.js'
 
 export default class CategoryList extends Component {
 
