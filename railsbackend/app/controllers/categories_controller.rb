@@ -4,4 +4,15 @@ class CategoriesController < ApplicationController
     categories = Category.all
     render json: CategorySerializer.new(categories)
   end
+
+  def fish
+    categories = Category.fish
+    render json: CategorySerializer.new(categories)
+  end
+
+  def equipment
+    categories = Category.equipment
+    render json: CategorySerializer.new(categories)
+  end
+
 end
