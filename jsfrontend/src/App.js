@@ -18,8 +18,8 @@ function App() {
     <div className="App">
       <Navbar />
       <Route exact path="/" component={Home} />
-      <Route path="/fish" render={() => <Categories division="fish" />} />
-      <Route path="/equipment" render={() => <Categories division="equipment" />} />
+      <Route path="/fish" render={() => <Categories division="fish" title="Fish and Marine Life"/>} />
+      <Route path="/equipment" render={() => <Categories division="equipment" title="Equipment and Accessories"/>} />
     </div>
     </Router>
   );
