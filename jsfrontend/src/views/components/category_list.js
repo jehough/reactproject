@@ -4,9 +4,9 @@ export default class CategoryList extends Component {
 
   render(){
     return(<div>
-
-      Make a list
-
+      <ul>
+      {this.props.list.map(category => <li>{category.attributes.name}</li>)}
+      </ul>
     </div>)
   }
 }

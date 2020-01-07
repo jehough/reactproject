@@ -17,7 +17,6 @@ export default class Home extends Component {
   render(){
     return(<div>
       <h1>Category: {this.props.title}</h1>
-      <h3>{this.props.division}</h3>
       <CategoryList list={this.state.list}/>
       </div>)
   }
