@@ -4,28 +4,28 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-fish = Category.create(name: "Fish and Marine Life")
-equipment = Category.create(name: "Equipment")
+#   Character.create(name: 'Luke', movie: movies.fiC
+fish = "Fish and Marine Life"
+equipment = "Equipment"
 
 # Fish Categories
-community = Subcategory.create(name: "Community Fish", category: fish)
-african = Subcategory.create(name: "African Cichlids", category: fish)
-south = Subcategory.create(name: "South American Cichlids", category: fish)
-salt = Subcategory.create(name: "Saltwater", category: fish)
-coral = Subcategory.create(name: "Coral and Live Rock", category: fish)
-koi = Subcategory.create(name: "Koi", category: fish)
-plants = Subcategory.create(name: "Live Plants", category: fish)
-salef = Subcategory.create(name: "Fish on Sale", category: fish)
+community = Category.create(name: "Community Fish", division: fish)
+african = Category.create(name: "African Cichlids", division: fish)
+south = Category.create(name: "South American Cichlids", division: fish)
+salt = Category.create(name: "Saltwater", division: fish)
+coral = Category.create(name: "Coral and Live Rock", division: fish)
+koi = Category.create(name: "Koi", division: fish)
+plants = Category.create(name: "Live Plants", division: fish)
+salef = Category.create(name: "Fish on Sale", division: fish)
 
 # Equipment Categories
-aquarium = Subcategory.create(name: "Aquarium kits", category: equipment)
-tank = Subcategory.create(name: "Tanks", category: equipment)
-filter = Subcategory.create(name: "Filtration and Sumps", category: equipment)
-rock = Subcategory.create(name: "Gravel and Sand", category: equipment)
-decor = Subcategory.create(name: "Aquarium Decoration", category: equipment)
-accessory = Subcategory.create(name: "Accessory", category: equipment)
-salee = Subcategory.create(name: "Equipment on Sale", category: equipment)
+aquarium = Category.create(name: "Aquarium kits", division: equipment)
+tank = Category.create(name: "Tanks", division: equipment)
+filter = Category.create(name: "Filtration and Sumps", division: equipment)
+rock = Category.create(name: "Gravel and Sand", division: equipment)
+decor = Category.create(name: "Aquarium Decoration", division: equipment)
+accessory = Category.create(name: "Accessory", division: equipment)
+salee = Category.create(name: "Equipment on Sale", division: equipment)
 
 
 
