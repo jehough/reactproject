@@ -13,7 +13,7 @@ export default class Items extends Component {
     }
   }
 
-  
+
   render(){
     return(<div>
       <p>This is where the items will go</p>
