@@ -48,3 +48,8 @@ ul {
 li {
   margin: 20px;
 }
+
+.previewImg {
+  width: 100px;
+  height: 100px;
+}
