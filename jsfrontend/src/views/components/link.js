@@ -1,3 +1,8 @@
 import React from 'react'
-const Link = (props) => <a href={`http://localhost:4000/${props.path}/${props.category.id}`}>{props.category.attributes.name}</a>
-export default Link
+import {Link} from 'react-router-dom'
+const LinkDisplay = (props) =>{
+  return(
+  <Link to={`${this.props.path}`}>{props.category.attributes.name}</>
+)
+}
+export default LinkDisplay

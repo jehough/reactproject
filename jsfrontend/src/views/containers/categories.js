@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 import CategoryList from '../components/category_list.js'
-
-export default class Home extends Component {
+import {
+  BrowserRouter as Router,
+  Link,
+  Route
+} from 'react-router-dom'
+export default class Categories extends Component {
   constructor(){
     super()
     this.state = {
@@ -17,7 +21,8 @@ export default class Home extends Component {
   render(){
     return(<div>
       <h1>Category: {this.props.title}</h1>
-      <CategoryList list={this.state.list}/>
+      <CategoryList path={this.props.match.path} list={this.state.list} divison={this.props.division}/>
+
       </div>)
   }
 }
