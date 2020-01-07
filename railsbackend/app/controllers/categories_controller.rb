@@ -3,6 +3,6 @@ class CategoriesController < ApplicationController
   def index
     categories = Category.all
     options = {include: [:subcategories]}
-    render json: categories, only: [:id, :name], include: [:subcategories => {:only => [:id, :name]}]
+    render json: CategorySerializer.new(categories, options)
   end
 end
