@@ -1,11 +1,6 @@
 import React, {Component} from 'react';
 import DisplayTitle from '../components/title.js'
 import ItemList from '../components/item_list.js'
-import {
-  BrowserRouter as Router,
-  Link,
-  Route
-} from 'react-router-dom'
 export default class Items extends Component {
   constructor(){
     super()

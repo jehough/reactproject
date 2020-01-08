@@ -20,6 +20,7 @@ function App() {
       <Route path="/fish" render={routerProps => <Categories {...routerProps} division="fish" title="Fish and Marine Life"/>} />
       <Route path="/equipment" render={routerProps => <Categories {...routerProps} division="equipment" title="Equipment and Accessories"/>} />
       <Route path="/categories/:catID" component={Items} />
+      <Route path="/items/:itemID" component={ItemShow} />
     </div>
     </Router>
   );
