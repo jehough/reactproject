@@ -53,3 +53,8 @@ li {
   width: 100px;
   height: 100px;
 }
+
+.showImage {
+  width: 50%;
+  height: 50%
+}
