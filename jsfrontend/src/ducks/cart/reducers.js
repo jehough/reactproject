@@ -6,7 +6,7 @@ const cartReducer = (state = {items: [], total: 0.00, loading: false}, action) =
         items: [...state.items, action.item],
         loading: false
       }
-    case 'REMOVE_ITEMS'
+    case 'REMOVE_ITEMS':
     return {
       ...state,
       items: state.items.filter(item => item.id !== action.id)
@@ -14,3 +14,5 @@ const cartReducer = (state = {items: [], total: 0.00, loading: false}, action) =
   }
 
 }
+
+export default cartReducer
