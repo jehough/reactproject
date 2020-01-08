@@ -18,9 +18,8 @@ import {connect} from 'react-redux'
               <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Nav.Link href="/cart">Cart({this.props.items.length})</Nav.Link>
+          <Nav.Link href="/cart"> &#128722; Cart({this.props.items.length})</Nav.Link>
           <SearchBar />
-
           </Navbar.Collapse>
         </Navbar>
   )

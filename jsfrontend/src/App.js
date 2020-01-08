@@ -9,6 +9,7 @@ import Items from './views/containers/items'
 import Navbar from './views/containers/navbar'
 import Categories from './views/containers/categories'
 import ItemShow from './views/containers/item_show'
+import Cart from './views/containers/cart'
 import { connect } from 'react-redux'
 import './App.css';
 import './bootstrap.css'
@@ -23,6 +24,7 @@ function App() {
       <Route path="/categories/:catID" component={Items} />
       <Route path="/items/:itemID" component={ItemShow} />
       <Route exact path="/items" render={routerProps => <Items {...routerProps}/>} />
+      <Route path="/cart" component={Cart} />
     </div>
     </Router>
   );
