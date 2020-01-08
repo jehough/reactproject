@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import CategoryList from '../components/category_list.js';
 import DisplayTitle from '../components/title.js'
+import Items from './items'
 
 
 
 
-export default class Categories extends Component {
+class Categories extends Component {
   constructor(){
     super()
     this.state = {
@@ -16,7 +17,6 @@ export default class Categories extends Component {
 
   divideLists = (json) => {
     const fishList = json.data.filter(obj => obj.attributes.division === "Fish and Marine Life")
-    console.log(fishList)
     const eqList = json.data.filter(obj => obj.attributes.division === "Equipment")
     this.setState({fishList: fishList, eqList: eqList})
   }
@@ -31,7 +31,7 @@ export default class Categories extends Component {
       <CategoryList list={this.state.fishList}/>
       <DisplayTitle title={"Equipment"} />
       <CategoryList list={this.state.eqList} />
-
       </div>)
   }
 }
+export default Categories

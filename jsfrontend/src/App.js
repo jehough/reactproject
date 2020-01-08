@@ -18,10 +18,10 @@ function App() {
     <div className="App">
       <Navbar />
       <Route exact path="/" component={Home} />
-      <Route path="/categories" render={routerProps => <Categories {...routerProps}/>} />
+      <Route exact path="/categories" render={routerProps => <Categories {...routerProps}/>} />
       <Route path="/categories/:catID" component={Items} />
       <Route path="/items/:itemID" component={ItemShow} />
-      <Route path="/items" render={routerProps => <Items {...routerProps}/>} />
+      <Route exact path="/items" render={routerProps => <Items {...routerProps}/>} />
     </div>
     </Router>
   );

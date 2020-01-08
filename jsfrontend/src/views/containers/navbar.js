@@ -16,6 +16,7 @@ export default class Navigation extends Component {
               <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <SearchBar />
           </Navbar.Collapse>
         </Navbar>
   )
