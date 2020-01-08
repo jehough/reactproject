@@ -8,10 +8,11 @@ export default class Items extends Component {
       list: []
     }
   }
-
   runSearch = (json) => {
     if (this.props.location.state.term){
-      console.log("search it")
+      const regex = new RegExp(`${this.props.location.state.term}`, 'i')
+      const searchList = json.data.filter(item => regex.test(item.attributes.name))
+      this.setState({list: searchList})
     }
     else{
     this.setState({list: json.data})}

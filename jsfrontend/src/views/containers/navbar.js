@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Button from 'react-bootstrap/Button';
-import {Redirect, withRouter} from 'react-router-dom';
-
+import SearchBar from './search_bar'
 export default class Navigation extends Component {
 
   render(){
@@ -19,7 +17,6 @@ export default class Navigation extends Component {
               <NavDropdown.Item href="/equipment">Equipment</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-
           </Navbar.Collapse>
         </Navbar>
   )
