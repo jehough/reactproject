@@ -1,5 +1,6 @@
 const cartReducer = (state = {items: [], total: 0.00, loading: false}, action) => {
   switch(action.type){
+
     case 'ADD_ITEMS':
       return {
         ...state,
@@ -11,6 +12,8 @@ const cartReducer = (state = {items: [], total: 0.00, loading: false}, action) =
       ...state,
       items: state.items.filter(item => item.id !== action.id)
     }
+    default:
+      return state;
   }
 
 }

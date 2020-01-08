@@ -9,6 +9,7 @@ import Items from './views/containers/items'
 import Navbar from './views/containers/navbar'
 import Categories from './views/containers/categories'
 import ItemShow from './views/containers/item_show'
+import { connect } from 'react-redux'
 import './App.css';
 import './bootstrap.css'
 
@@ -26,5 +27,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;

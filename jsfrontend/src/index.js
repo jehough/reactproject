@@ -8,7 +8,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk'
 import cartReducer from './ducks/cart/reducers.js'
 
-const store = createStore(cartReducer)
+const store = createStore(cartReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 

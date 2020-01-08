@@ -3,7 +3,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import SearchBar from './search_bar'
-export default class Navigation extends Component {
+import {connect} from 'react-redux'
+
+ class Navigation extends Component {
 
   render(){
     return(<Navbar variant="light" expand="lg" sticky="top">
@@ -16,9 +18,16 @@ export default class Navigation extends Component {
               <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <Nav.Link href="/cart">Cart({this.props.items.length})</Nav.Link>
           <SearchBar />
+
           </Navbar.Collapse>
         </Navbar>
   )
   }
 }
+const mapStateToProps = state => {
+  return {
+  items: state.items
+}}
+export default connect(mapStateToProps)(Navigation)
