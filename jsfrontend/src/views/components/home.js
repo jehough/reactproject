@@ -11,7 +11,7 @@ export default class Home extends Component {
           <img className="carouselImage" src="./coral.jpeg" alt="First Slide"/>
         </Carousel.Item>
         <Carousel.Item>
-          <img clasName="carouselImage" src="./blackskirt.jpeg" alt="Second Slide" />
+          <img className="carouselImage" src="./blackskirt.jpeg" alt="Second Slide" />
         </Carousel.Item>
         <Carousel.Item>
           <img className="carouselImage" src="./Koi.jpeg" alt="Third Slide" />
