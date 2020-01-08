@@ -8,5 +8,6 @@ class ItemsController < ApplicationController
 
   def show
     item = Item.find(params[:id])
-    render json: ItemSerializer.new(items)
+    render json: ItemSerializer.new(item)
+  end
 end
