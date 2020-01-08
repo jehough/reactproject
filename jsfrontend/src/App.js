@@ -22,6 +22,7 @@ function App() {
       <Route path="/equipment" render={routerProps => <Categories {...routerProps} division="equipment" title="Equipment and Accessories"/>} />
       <Route path="/categories/:catID" component={Items} />
       <Route path="/items/:itemID" component={ItemShow} />
+      <Route path="/items" components = {Items} />
     </div>
     </Router>
   );

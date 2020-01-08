@@ -9,10 +9,18 @@ export default class Items extends Component {
     }
   }
 
+  runSearch = (json) => {
+    if (this.props.location.state.term){
+      console.log("search it")
+    }
+    else{
+    this.setState({list: json.data})}
+  }
+
   componentDidMount(){
     fetch(this.props.location.state.url)
       .then(resp=> resp.json())
-      .then(json => this.setState({list: json.data}))
+      .then(json => this.runSearch(json))
   }
 
   render(){

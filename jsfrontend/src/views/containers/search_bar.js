@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl'
+import {Link, withRouter} from 'react-router-dom';
 
 export default class SearchBar extends Component {
   constructor() {
@@ -15,16 +14,20 @@ export default class SearchBar extends Component {
     this.setState({term: event.target.value})
   }
 
-  handleSubmit = () => {
-    
-  }
-  render(){
-    return(
-            <Form inline>
-              <FormControl type="text" placeholder="Search Our Products" className="searchBox" onChange={this.handleChange}/>
-              <Button variant="light">Search</Button>
-            </Form>
 
+  render(){
+
+    return(
+        <div>
+              <input type="text" placeholder="Search Our Products" className="searchBox" onChange={this.handleChange}/>
+              <Link to={{pathname: '/hairydogs',
+                          state: {term: this.state.term,
+                                  name: "Search Results",
+                                  url:"http://localhost:4000/items"}}} >
+                                  <Button variant="light">Search</Button></Link>
+        </div>
   )
   }
 }
+
+withRouter(SearchBar)
