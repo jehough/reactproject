@@ -8,6 +8,7 @@ import Home from './views/components/home'
 import Items from './views/containers/items'
 import Navbar from './views/components/navbar'
 import Categories from './views/containers/categories'
+import ItemShow from './views/containers/item_show'
 import './App.css';
 import './bootstrap.css'
 
