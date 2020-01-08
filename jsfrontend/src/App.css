@@ -50,11 +50,11 @@ li {
 }
 
 .previewImg {
-  width: 100px;
-  height: 100px;
+  width: 40%;
+  height: 40%;
 }
 
 .showImage {
-  width: 50%;
-  height: 50%
+  width: 35%;
+  height: 35%
 }
