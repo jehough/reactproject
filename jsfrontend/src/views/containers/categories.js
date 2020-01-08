@@ -9,19 +9,28 @@ export default class Categories extends Component {
   constructor(){
     super()
     this.state = {
-      list: []
+      fishList: [],
+      eqList: []
     }
   }
 
- componentDidMount(){
-   fetch(`http://localhost:4000/${this.props.division}`)
+  divideLists = (json) => {
+    const fishList = json.data.filter(obj => obj.attributes.division === "Fish and Marine Life")
+    console.log(fishList)
+    const eqList = json.data.filter(obj => obj.attributes.division === "Equipment")
+    this.setState({fishList: fishList, eqList: eqList})
+  }
+  componentDidMount(){
+   fetch(`http://localhost:4000/categories`)
      .then(resp=> resp.json())
-     .then(json => this.setState({list: json.data}))
+     .then(json => this.divideLists(json))
  }
   render(){
     return(<div>
-      <DisplayTitle title={this.props.title} />
-      <CategoryList list={this.state.list}/>
+      <DisplayTitle title={"Fish and Marine Life"} />
+      <CategoryList list={this.state.fishList}/>
+      <DisplayTitle title={"Equipment"} />
+      <CategoryList list={this.state.eqList} />
 
       </div>)
   }

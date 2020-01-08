@@ -18,11 +18,10 @@ function App() {
     <div className="App">
       <Navbar />
       <Route exact path="/" component={Home} />
-      <Route path="/fish" render={routerProps => <Categories {...routerProps} division="fish" title="Fish and Marine Life"/>} />
-      <Route path="/equipment" render={routerProps => <Categories {...routerProps} division="equipment" title="Equipment and Accessories"/>} />
+      <Route path="/categories" render={routerProps => <Categories {...routerProps}/>} />
       <Route path="/categories/:catID" component={Items} />
       <Route path="/items/:itemID" component={ItemShow} />
-      <Route path="/items" component={Items} />
+      <Route path="/items" render={routerProps => <Items {...routerProps}/>} />
     </div>
     </Router>
   );
