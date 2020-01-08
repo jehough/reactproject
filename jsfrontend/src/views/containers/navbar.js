@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl'
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import SearchBar from './search_bar'
 export default class Navigation extends Component {
 
   render(){
@@ -19,10 +20,7 @@ export default class Navigation extends Component {
               <NavDropdown.Item href="/equipment">Equipment</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-            <Form inline>
-              <FormControl type="text" placeholder="Search Our Products" className="searchBox"/>
-              <Button variant="light">Search</Button>
-            </Form>
+            <SearchBar />
           </Navbar.Collapse>
         </Navbar>
   )
