@@ -10,7 +10,7 @@ export default class Items extends Component {
   }
 
   componentDidMount(){
-    fetch(`http://localhost:4000/categories/${this.props.location.state.id}`)
+    fetch(this.props.location.state.url)
       .then(resp=> resp.json())
       .then(json => this.setState({list: json.data}))
   }
