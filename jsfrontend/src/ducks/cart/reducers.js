@@ -3,9 +3,10 @@ const cartReducer = (state = {items: [], price: 0.00, loading: false}, action) =
 
     case 'ADD_ITEMS':
       const sum = action.quantity * action.item.attributes.price
+      const itemObj= {quantity: action.quantity, item: action.item}
       return {
         ...state,
-        items: [...state.items, action.item],
+        items: [...state.items, itemObj],
         price: state.price + sum,
         loading: false
       }
