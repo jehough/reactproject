@@ -1,4 +1,5 @@
 import React from 'react';
+import RootComponent from './root_component'
 import {
   BrowserRouter as Router,
   Route,

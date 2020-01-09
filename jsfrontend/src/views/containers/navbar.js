@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import SearchBar from './search_bar'
 import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom'
 
  class Navigation extends Component {
 
@@ -18,7 +19,7 @@ import {connect} from 'react-redux'
               <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Nav.Link href="/cart"> &#128722; Cart({this.props.items.length})</Nav.Link>
+          <Nav.Link href="/cart"> &#128722; Cart({this.props.items.length}): ${this.props.price}</Nav.Link>
           <SearchBar />
           </Navbar.Collapse>
         </Navbar>
@@ -27,6 +28,7 @@ import {connect} from 'react-redux'
 }
 const mapStateToProps = state => {
   return {
-  items: state.items
+  items: state.items,
+  price: state.price
 }}
-export default connect(mapStateToProps)(Navigation)
+export default withRouter(connect(mapStateToProps)(Navigation))

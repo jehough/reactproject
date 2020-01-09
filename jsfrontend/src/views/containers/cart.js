@@ -19,7 +19,8 @@ class Cart extends Component {
 
 const mapStateToProps = state => {
   return {
-    items: state.items
+    items: state.items,
+    price: state.price
   }
 }
 
