@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, {Component} from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -15,5 +16,19 @@ import './App.css';
 import './bootstrap.css'
 
 export default class RootComponent extends Component{
-  
+  render(){
+    return (
+      <Router>
+      <div className="App">
+        <Navbar />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/categories" render={routerProps => <Categories {...routerProps}/>} />
+        <Route path="/categories/:catID" component={Items} />
+        <Route path="/items/:itemID" component={ItemShow} />
+        <Route exact path="/items" render={routerProps => <Items {...routerProps}/>} />
+        <Route path="/cart" component={Cart} />
+      </div>
+      </Router>
+    );
+  }
 }

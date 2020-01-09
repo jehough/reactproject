@@ -17,17 +17,7 @@ import './bootstrap.css'
 
 function App() {
   return (
-    <Router>
-    <div className="App">
-      <Navbar />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/categories" render={routerProps => <Categories {...routerProps}/>} />
-      <Route path="/categories/:catID" component={Items} />
-      <Route path="/items/:itemID" component={ItemShow} />
-      <Route exact path="/items" render={routerProps => <Items {...routerProps}/>} />
-      <Route path="/cart" component={Cart} />
-    </div>
-    </Router>
+    <RootComponent />
   );
 }
 
