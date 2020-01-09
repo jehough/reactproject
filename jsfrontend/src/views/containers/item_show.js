@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import DisplayTitle from '../components/title.js'
 import DisplayCard from '../components/display_card.js'
+import {Link} from 'react-router-dom'
 export default class ItemShow extends Component {
   constructor(){
     super()
