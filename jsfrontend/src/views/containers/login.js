@@ -5,7 +5,7 @@ import LoginForm from '../components/login_form'
 export default class Login extends Component {
 
   render(){
-    return(<div>
+    return(<div className="form-container">
       <DisplayTitle title="Login Page" />
       <h4>You must login to view your cart.</h4>
       <LoginForm />

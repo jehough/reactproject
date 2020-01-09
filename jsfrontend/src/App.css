@@ -57,3 +57,12 @@ li {
   width: 35%;
   height: 35%
 }
+
+.form {
+  justify-content: center;
+  width: 80%
+}
+
+.form-container{
+  justify-content: center;
+}
