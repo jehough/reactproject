@@ -3,7 +3,8 @@ import DisplayTitle from '../components/title'
 import LoginForm from '../components/login_form'
 
 export default class NewUser extends Component {
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault()
     console.log("New User Submit")
   }
   render(){
