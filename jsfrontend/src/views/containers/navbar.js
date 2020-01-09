@@ -19,7 +19,7 @@ import {Link, withRouter} from 'react-router-dom'
               <NavDropdown.Item><Link to="/categories">Categories</Link></NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Nav> &#128722; <Link to="/cart">Cart({this.props.items.length})</Link>: ${this.props.price}</Nav>
+          <Nav> <span role="img" aria-label="cart">&#128722;</span> <Link to="/cart">Cart({this.props.items.length})</Link>: ${this.props.price}</Nav>
           <SearchBar />
           </Navbar.Collapse>
         </Navbar>

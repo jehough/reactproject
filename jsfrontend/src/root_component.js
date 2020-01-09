@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Switch
 } from 'react-router-dom';
 import Home from './views/components/home'
 import Items from './views/containers/items'
@@ -13,7 +12,6 @@ import ItemShow from './views/containers/item_show'
 import Cart from './views/containers/cart'
 import Login from './views/containers/login'
 import NewUser from './views/containers/newuser'
-import { connect } from 'react-redux'
 import './App.css';
 import './bootstrap.css'
 
