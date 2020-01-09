@@ -35,4 +35,4 @@ class   AddCartButton extends Component {
 
 const mapDispatchToProps = dispatch => bindActionCreators({addToCart}, dispatch)
 
-export default connect(mapDispatchToProps)(AddCartButton)
+export default connect(null, mapDispatchToProps)(AddCartButton)
