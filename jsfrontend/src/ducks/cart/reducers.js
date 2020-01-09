@@ -1,4 +1,4 @@
-const cartReducer = (state = {items: [], price: 0.00, loading: false}, action) => {
+export const cartReducer = (state = {items: [], price: 0.00, loading: false}, action) => {
   switch(action.type){
 
     case 'ADD_ITEMS':
