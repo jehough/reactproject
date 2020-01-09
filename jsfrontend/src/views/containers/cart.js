@@ -8,12 +8,7 @@ import {Redirect} from 'react-router-dom'
 
 
 class Cart extends Component {
-  constructor(){
-    super()
-    this.state = {
-      signed_in: false
-    }
-  }
+
 
 
   render(){
@@ -26,8 +21,9 @@ class Cart extends Component {
 
 const mapStateToProps = state => {
   return {
-    items: state.items,
-    price: state.price
+    items: state.cart.items,
+    price: state.cart.price,
+    signed_in: state.user.signed_in
   }
 }
 

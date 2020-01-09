@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import {persistStore, persistReducer} from 'redux-persist';
 import thunk from 'redux-thunk'
-import rootReducer from './ducks/root_reducer.js'
+import rootReducer from './root_reducer.js'
 
 
 const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())

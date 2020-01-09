@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
-import {cartReducer} from './cart/reducers'
-import {userReducer} from './user/reducers'
+import cartReducer from './ducks/cart/reducers.js'
+import userReducer from './ducks/user/reducers.js'
 
 const rootReducer = combineReducers({
   cart: cartReducer,

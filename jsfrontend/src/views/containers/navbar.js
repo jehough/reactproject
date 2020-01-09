@@ -28,7 +28,7 @@ import {Link, withRouter} from 'react-router-dom'
 }
 const mapStateToProps = state => {
   return {
-  items: state.items,
-  price: state.price
+  items: state.cart.items,
+  price: state.cart.price
 }}
 export default withRouter(connect(mapStateToProps)(Navigation))
