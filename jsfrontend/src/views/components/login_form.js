@@ -8,7 +8,7 @@ export default class LoginForm extends Component {
   render(){
     return(<div className="form">
 
-      <Form>
+      <Form onSubmit={this.props.handleSubmit}>
         <Form.Group controlId="username">
         <Form.Label>Username</Form.Label>
         <Form.Control type="text" placeholder="Enter username" />

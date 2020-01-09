@@ -16,7 +16,8 @@ export default class Login extends Component {
     this.setState({newuser: true})
   }
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault()
     console.log("Login Submit")
   }
   render(){
