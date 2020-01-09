@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import DisplayTitle from '../components/title.js'
-import ItemList from '../components/item_list.js'
+import CartList from '../components/cart_list.js'
 import {connect} from 'react-redux'
 
 
@@ -12,7 +12,7 @@ class Cart extends Component {
   render(){
     return(<div>
       <DisplayTitle title={"Your Cart"} />
-      <ItemList list={this.props.items}/>
+      <CartList list={this.props.items} price={this.props.price}/>
       </div>)
   }
 }
