@@ -12,6 +12,7 @@ import Categories from './views/containers/categories'
 import ItemShow from './views/containers/item_show'
 import Cart from './views/containers/cart'
 import Login from './views/containers/login'
+import NewUser from './views/containers/newuser'
 import { connect } from 'react-redux'
 import './App.css';
 import './bootstrap.css'
@@ -29,8 +30,9 @@ export default class RootComponent extends Component{
         <Route exact path="/items" render={routerProps => <Items {...routerProps}/>} />
         <Route path="/cart" component={Cart} />
         <Route path="/login" component={Login} />
+        <Route path="/newuser" component={NewUser} />
       </div>
       </Router>
-    );
+    )
   }
 }

@@ -4,15 +4,6 @@ import Button from 'react-bootstrap/Button';
 import {Redirect} from 'react-router-dom'
 
 export default class LoginForm extends Component {
-  constructor(){
-    super()
-    this.state = {
-      newuser: false
-    }
-  }
-  handleClick = () => {
-    this.setState({newuser: true})
-  }
 
   render(){
     return(<div className="form">
@@ -32,7 +23,7 @@ export default class LoginForm extends Component {
         <Button variant="info">Log In</Button>
 
       </Form>
-              <Button variant="info" onClick={this.handleClick}>Create New User</Button>
+
     </div>)
   }
 }
