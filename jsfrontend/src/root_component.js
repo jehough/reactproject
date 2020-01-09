@@ -11,6 +11,7 @@ import Navbar from './views/containers/navbar'
 import Categories from './views/containers/categories'
 import ItemShow from './views/containers/item_show'
 import Cart from './views/containers/cart'
+import Login from './views/containers/login'
 import { connect } from 'react-redux'
 import './App.css';
 import './bootstrap.css'
@@ -27,6 +28,7 @@ export default class RootComponent extends Component{
         <Route path="/items/:itemID" component={ItemShow} />
         <Route exact path="/items" render={routerProps => <Items {...routerProps}/>} />
         <Route path="/cart" component={Cart} />
+        <Route path="/login" component={Login} />
       </div>
       </Router>
     );
