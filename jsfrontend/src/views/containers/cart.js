@@ -14,7 +14,7 @@ class Cart extends Component {
   render(){
     return(<div>
       <DisplayTitle title={"Your Cart"} />
-      {this.state.signed_in ? <CartList list={this.props.items} price={this.props.price}/>:<Redirect to="/login"/>}
+      {this.props.signed_in ? <CartList list={this.props.items} price={this.props.price}/>:<Redirect to="/login"/>}
       </div>)
   }
 }

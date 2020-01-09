@@ -1,4 +1,4 @@
-const user = (state = {signed_in: false},action) => {
+const userReducer = (state = {signed_in: false},action) => {
   switch(action.type){
     case 'SIGN IN USER':
       return{
@@ -8,3 +8,5 @@ const user = (state = {signed_in: false},action) => {
       return state
   }
 }
+
+export default userReducer
