@@ -3,3 +3,9 @@ export function addToCart(item, quantity) {
   type: "ADD_ITEMS", quantity: quantity, item: item
   }
 }
+
+export const clearCart () => {
+  return{
+    type: "CLEAR CART"
+  }
+}

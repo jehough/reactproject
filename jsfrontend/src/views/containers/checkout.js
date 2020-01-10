@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import DisplayTitle from '../components/title'
 import {Redirect} from 'react-router-dom'
 import {makeObject, filterList} from '../functions/functions.js'
-import {handleUserResponse} from '../../ducks/user/actions.js'
+import {clearCart} from '../../ducks/cart/actions.js'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import CheckoutForm from '../components/checkout_form'
@@ -16,6 +16,8 @@ class Checkout extends Component {
   }
   handleResponse = (json) => {
     alert(json.status)
+    this.props.clearCart()
+    this.setState({finished: true})
   }
 
   handleCheckout = (e) => {
@@ -58,6 +60,6 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({handleUserResponse}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({handleUserResponse, clearCart}, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Checkout)
