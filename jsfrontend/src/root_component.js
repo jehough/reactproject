@@ -12,6 +12,7 @@ import ItemShow from './views/containers/item_show'
 import Cart from './views/containers/cart'
 import Login from './views/containers/login'
 import NewUser from './views/containers/newuser'
+import Checkout from './views/containers/checkout'
 import './App.css';
 import './bootstrap.css'
 
@@ -29,6 +30,7 @@ export default class RootComponent extends Component{
         <Route path="/cart" component={Cart} />
         <Route path="/login" component={Login} />
         <Route path="/newuser" component={NewUser} />
+        <Route path="/checkout" component={Checkout} />
       </div>
       </Router>
     )
