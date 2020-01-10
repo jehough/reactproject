@@ -23,6 +23,7 @@ class Checkout extends Component {
     items: sendItems
     }
     const object = makeObject("POST", formData)
+    object.headers = {...headers, authorization: this.props.auth_token}
     fetch("http://localhost:4000/order", formData)
       .then(resp => resp.json())
       .then(json => console.log(json))
@@ -40,6 +41,7 @@ class Checkout extends Component {
 const mapStateToProps = state => {
   return {
     signed_in: state.user.signed_in,
+    auth_token: state.user.auth_token,
     message: state.user.message,
     items: state.cart.items
   }
