@@ -8,7 +8,7 @@ const cartReducer = (state = {items: [], price: 0.00}, action) => {
         items: [...state.items, itemObj],
         price: state.price + sum,
       }
-    case 'REMOVE_ITEMS':
+    case 'REMOVE_ITEM':
     return {
       ...state,
       items: state.items.filter(item => item.id !== action.id)

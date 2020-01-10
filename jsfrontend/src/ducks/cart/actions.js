@@ -9,3 +9,10 @@ export function clearCart() {
     type: "CLEAR_CART"
   }
 }
+
+export function removeItem(item_id) {
+  return{
+    type: "REMOVE_ITEM",
+    item_id: item_id
+  }
+}
