@@ -23,6 +23,7 @@ class Checkout extends Component {
     items: sendItems
     }
     const object = makeObject("POST", formData)
+    const headers = object.headers
     object.headers = {...headers, authorization: this.props.auth_token}
     fetch("http://localhost:4000/order", formData)
       .then(resp => resp.json())
