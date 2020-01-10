@@ -8,3 +8,13 @@ export const makeObject = (method, formData) => {
     body: JSON.stringify(formData)
   };
 }
+
+export const filterList = (arr) => {
+  const newarr = arr.map(item => {
+    return {
+      quantity: item.quantity,
+      itemId: item.item.id
+    }
+  })
+  return newarr
+}

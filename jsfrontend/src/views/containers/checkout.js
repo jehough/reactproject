@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import DisplayTitle from '../components/title'
-import Button from 'react-bootstrap/Button'
 import {Redirect} from 'react-router-dom'
-import {makeObject} from '../functions/functions.js'
+import {makeObject, filterList} from '../functions/functions.js'
 import {handleUserResponse} from '../../ducks/user/actions.js'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
@@ -14,7 +13,20 @@ class Checkout extends Component {
 
   handleCheckout = (e) => {
     e.preventDefault()
+    const sendItems = filterList(this.props.items)
+    console.log(sendItems)
+    const form = e.target
+    const formData = {
+    payment: form.payment.value,
+    cardnumber: form.cardnumber.value,
+    cardname: form.cardname.value,
+    zipcode: form.cardzip.value,
+    items: sendItems
+    }
+    const object = makeObject("POST", formData)
+
   }
+
   render(){
     return(<div>
       <DisplayTitle title="Checkout" />
@@ -27,7 +39,8 @@ class Checkout extends Component {
 const mapStateToProps = state => {
   return {
     signed_in: state.user.signed_in,
-    message: state.user.message
+    message: state.user.message,
+    items: state.cart.items
   }
 }
 

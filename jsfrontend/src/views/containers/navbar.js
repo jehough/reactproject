@@ -24,7 +24,7 @@ import {Link, withRouter} from 'react-router-dom';
           </Nav>
           <Nav className="cartblurb"> <span role="img" aria-label="cart">&#128722;</span> <Link to="/cart">Cart({this.props.items.length})</Link>: ${this.props.price}</Nav>
           <SearchBar />
-          {this.props.signed_in? <NavButton onClick={this.props.logout} text="Logout"/>:<Link to="/login"><NavButton onClick="none" text="Login"/></Link>}
+          {this.props.signed_in? <NavButton onClick={this.props.logout} text="Logout"/>:<Link to="/login"><NavButton text="Login"/></Link>}
           </Navbar.Collapse>
         </Navbar>
   )
