@@ -14,7 +14,6 @@ class Checkout extends Component {
   handleCheckout = (e) => {
     e.preventDefault()
     const sendItems = filterList(this.props.items)
-    console.log(sendItems)
     const form = e.target
     const formData = {
     payment: form.payment.value,
