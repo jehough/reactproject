@@ -7,7 +7,7 @@ class AuthenticationController < ApplicationController
    if command.success?
      render json: { auth_token: command.result }
    else
-     render json: { error: command.errors }, status: :unauthorized
+     render json: { status: "error", message: "Incorrect Username/Password Combination" }
    end
  end
 end

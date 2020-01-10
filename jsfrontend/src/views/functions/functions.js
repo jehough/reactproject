@@ -10,5 +10,5 @@ export const makeObject = (method, formData) => {
 }
 
 export const handleUserResponse = (json) => {
-  console.log("handled")
+  console.log(json)
 }
