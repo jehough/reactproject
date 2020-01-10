@@ -24,7 +24,9 @@ class Checkout extends Component {
     items: sendItems
     }
     const object = makeObject("POST", formData)
-
+    fetch("http://localhost:4000/order", formData)
+      .then(resp => resp.json())
+      .then(json => console.log(json))
   }
 
   render(){
