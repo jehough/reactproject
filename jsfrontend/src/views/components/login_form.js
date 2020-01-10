@@ -11,7 +11,6 @@ export default class LoginForm extends Component {
         <Form.Group controlId="email">
         <Form.Label>Email</Form.Label>
         <Form.Control type="email" name="email" placeholder="email@example.com" />
-        <Form.Text variant="danger">username password incorrect</Form.Text>
         </Form.Group>
 
         <Form.Group controlId="password">

@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import SearchBar from '../components/search_bar'
-import {connect} from 'react-redux'
-import {Link, withRouter} from 'react-router-dom'
+import SearchBar from '../components/search_bar';
+import NavButton from '../components/nav_button';
+import {connect} from 'react-redux';
+import {Link, withRouter} from 'react-router-dom';
 
  class Navigation extends Component {
 

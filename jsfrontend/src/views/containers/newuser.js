@@ -5,6 +5,7 @@ import {makeObject} from '../functions/functions.js'
 import {handleUserResponse} from '../../ducks/user/actions.js'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom'
 
 class NewUser extends Component {
   handleSubmit = (e) => {
@@ -20,7 +21,9 @@ class NewUser extends Component {
   }
   render(){
     return(<div className="form-container">
+      {this.props.signed_in ? <Redirect to="/" />:null}
       <DisplayTitle title="New User" />
+      {this.props.message === '' ? <p>{this.props.message}</p>:null}
       <LoginForm handleSubmit={this.handleSubmit}/>
     </div>)
   }

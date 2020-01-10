@@ -13,12 +13,13 @@ class Login extends Component {
   constructor(){
     super()
     this.state = {
-      newuser: false
+      newuser: false,
+      tried: false
     }
   }
 
   handleClick = () => {
-    this.setState({newuser: true})
+    this.setState({newuser: true, tried: false})
   }
 
   handleSubmit = (e) => {
@@ -31,12 +32,15 @@ class Login extends Component {
     fetch("http://localhost:4000/authenticate", object)
       .then(resp => resp.json())
       .then(json => this.props.handleUserResponse(json))
+    this.setState({newuser:false, tried:true})
   }
   render(){
     return(<div className="form-container">
+      {this.props.signed_in ? <Redirect to="/" />:null}
       {this.state.newuser? <Redirect to="/newuser"/>:null}
       <DisplayTitle title="Login Page" />
       <h4>You must login to view your cart.</h4>
+      {this.props.message === '' ? <p>{this.props.message}</p>:null}
       <LoginForm handleSubmit={this.handleSubmit}/>
       <Button variant="info" onClick={this.handleClick}>Create New User</Button>
     </div>)
@@ -53,4 +57,4 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => bindActionCreators({handleUserResponse}, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewUser)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
