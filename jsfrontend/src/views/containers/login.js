@@ -24,7 +24,7 @@ export default class Login extends Component {
                       email: form.email.value,
                       password: form.password.value}
     const object = makeObject("POST", formData)
-    fetch("http://localhost:4000/authenticate")
+    fetch("http://localhost:4000/authenticate", object)
       .then(resp => resp.json())
       .then(json => handleUserResponse(json))
   }

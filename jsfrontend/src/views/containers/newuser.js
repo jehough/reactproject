@@ -11,7 +11,7 @@ export default class NewUser extends Component {
                       email: form.email.value,
                       password: form.password.value}
     const object = makeObject("POST", formData)
-    fetch("http://localhost:4000/user/new")
+    fetch("http://localhost:4000/user", object)
       .then(resp => resp.json())
       .then(json => handleUserResponse(json))
   }
