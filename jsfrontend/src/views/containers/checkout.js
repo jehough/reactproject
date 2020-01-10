@@ -60,6 +60,6 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({handleUserResponse, clearCart}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({clearCart}, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Checkout)

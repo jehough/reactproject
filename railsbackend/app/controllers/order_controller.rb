@@ -1,4 +1,5 @@
 class OrderController < ApplicationController
+
   def create
     order = Order.new(user: @current_user, date_purchased: Date.today, payment: params[:payment], cardnumber: params[:cardnumber], cardname: params[:cardname], zipcode: params[:zipcode])
     if order.save

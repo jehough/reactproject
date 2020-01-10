@@ -15,7 +15,7 @@ const cartReducer = (state = {items: [], price: 0.00}, action) => {
     }
     case 'CLEAR_CART':
     return{
-      items: []
+      items: [],
       price: 0.00
     }
     default:
