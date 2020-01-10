@@ -1,20 +1,19 @@
 import React, {Component} from 'react';
 import DisplayTitle from '../components/title'
 import LoginForm from '../components/login_form'
-import {makeObject} from '../functions/functions.js'
+import {makeObject, handleUserResponse} from '../functions/functions.js'
 
 export default class NewUser extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const form = e.target
     const formData = {
-                      username: form.username.value,
+                      email: form.email.value,
                       password: form.password.value}
-    console.log(formData)
     const object = makeObject("POST", formData)
-    console.log(object)
-
-
+    fetch("http://localhost:4000/user/new")
+      .then(resp => resp.json())
+      .then(json => handleUserResponse(json))
   }
   render(){
     return(<div className="form-container">

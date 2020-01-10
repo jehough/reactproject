@@ -8,3 +8,7 @@ export const makeObject = (method, formData) => {
     body: JSON.stringify(formData)
   };
 }
+
+export const handleUserResponse = (json) => {
+  console.log("handled")
+}
