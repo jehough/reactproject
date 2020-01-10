@@ -3,6 +3,7 @@ import DisplayTitle from '../components/title'
 import LoginForm from '../components/login_form'
 import Button from 'react-bootstrap/Button'
 import {Redirect} from 'react-router-dom'
+import {makeObject} from '../functions/functions.js'
 
 export default class Login extends Component {
   constructor(){
@@ -18,7 +19,13 @@ export default class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log("Login Submit")
+    const form = e.target
+    const formData = {
+                      username: form.username.value,
+                      password: form.password.value}
+    console.log(formData)
+    const object = makeObject("POST", formData)
+    console.log(object)
   }
   render(){
     return(<div className="form-container">
