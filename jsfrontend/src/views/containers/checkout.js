@@ -6,6 +6,7 @@ import {makeObject} from '../functions/functions.js'
 import {handleUserResponse} from '../../ducks/user/actions.js'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
+import CheckoutForm from '../components/checkout_form'
 
 class Checkout extends Component {
 

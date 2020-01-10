@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import CheckoutForm from '../components/checkout_form'
+
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -12,10 +12,11 @@ export default class CheckoutForm extends Component {
       <Form.Row>
         <Form.Group controlId="payment">
         <Form.Label>Form of Payment</Form.Label>
-        <Form.Control type="select" name="payment" placeholder="email@example.com" />
+        <Form.Control as="select" name="payment">
           <option>Visa</option>
           <option>MasterCard</option>
           <option>First Born Child</option>
+        </Form.Control>
         </Form.Group>
       </Form.Row>
       <Form.Row>

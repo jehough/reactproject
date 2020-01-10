@@ -60,12 +60,13 @@ li {
 
 .form {
   justify-content: center;
+  padding-left: 5%;
   width: 80%
 }
 
 .form-container{
   justify-content: center;
-  padding-left: 5%;
+
 }
 
 .cartblurb{
