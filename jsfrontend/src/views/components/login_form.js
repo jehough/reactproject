@@ -10,13 +10,13 @@ export default class LoginForm extends Component {
       <form onSubmit={this.props.handleSubmit}>
         <Form.Group controlId="username">
         <Form.Label>Username</Form.Label>
-        <Form.Control type="text" placeholder="Enter username" />
+        <Form.Control type="text" name="username" placeholder="Enter username" />
         <Form.Text variant="danger">username password incorrect</Form.Text>
         </Form.Group>
 
         <Form.Group controlId="password">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Enter Password" />
+        <Form.Control type="password" name="password" placeholder="Enter Password" />
         </Form.Group>
 
         <Button variant="info" type="submit">Log In</Button>
