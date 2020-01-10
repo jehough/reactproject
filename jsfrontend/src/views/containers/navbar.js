@@ -4,7 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import SearchBar from '../components/search_bar';
 import NavButton from '../components/nav_button';
-import {logout} from '../../ducks/user/reducers'
+import {logout} from '../../ducks/user/actions'
+import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
 import {Link, withRouter} from 'react-router-dom';
 
@@ -21,9 +22,9 @@ import {Link, withRouter} from 'react-router-dom';
               <NavDropdown.Item><Link to="/categories">Categories</Link></NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Nav> <span role="img" aria-label="cart">&#128722;</span> <Link to="/cart">Cart({this.props.items.length})</Link>: ${this.props.price}</Nav>
+          <Nav className="cartblurb"> <span role="img" aria-label="cart">&#128722;</span> <Link to="/cart">Cart({this.props.items.length})</Link>: ${this.props.price}</Nav>
           <SearchBar />
-          {this.props.signed_in? <NavButton onClick={this.props.logout} text="Logout"}
+          {this.props.signed_in? <NavButton onClick={this.props.logout} text="Logout"/>:<Link to="/login"><NavButton onClick="none" text="Login"/></Link>}
           </Navbar.Collapse>
         </Navbar>
   )
@@ -35,5 +36,5 @@ const mapStateToProps = state => {
   price: state.cart.price,
   signed_in: state.user.signed_in
 }}
-const mapDispatchToProps = dispatch => indActionCreators({logout}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({logout}, dispatch)
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Navigation))
