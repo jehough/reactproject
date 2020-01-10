@@ -60,13 +60,13 @@ ActiveRecord::Schema.define(version: 2020_01_10_044212) do
   end
 
   create_table "order_items", force: :cascade do |t|
-    t.integer "orders_id"
-    t.integer "items_id"
+    t.integer "order_id"
+    t.integer "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity"
-    t.index ["items_id"], name: "index_order_items_on_items_id"
-    t.index ["orders_id"], name: "index_order_items_on_orders_id"
+    t.index ["item_id"], name: "index_order_items_on_item_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|
