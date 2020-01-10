@@ -1,8 +1,15 @@
-const userReducer = (state = {signed_in: false, token: ''},action) => {
+const userReducer = (state = {signed_in: false, auth_token: '', message: ''},action) => {
   switch(action.type){
     case 'SIGN IN USER':
       return{
-        signed_in: true
+        ...state,
+        signed_in: true,
+        message: ''
+      }
+    case 'UPDATE ERRORS':
+      return{
+        ...state,
+        message: action.message
       }
     default:
       return state
