@@ -11,5 +11,10 @@ export const handleUserResponse = (json) => {
       auth_token: json.auth_token
     }
   }
+}
 
+export const logout = () => {
+  return {
+    type: "LOGOUT"
+  }
 }

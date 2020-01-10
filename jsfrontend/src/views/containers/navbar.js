@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import SearchBar from '../components/search_bar';
 import NavButton from '../components/nav_button';
+import {logout} from '../../ducks/user/reducers'
 import {connect} from 'react-redux';
 import {Link, withRouter} from 'react-router-dom';
 
@@ -22,6 +23,7 @@ import {Link, withRouter} from 'react-router-dom';
           </Nav>
           <Nav> <span role="img" aria-label="cart">&#128722;</span> <Link to="/cart">Cart({this.props.items.length})</Link>: ${this.props.price}</Nav>
           <SearchBar />
+          {this.props.signed_in? <NavButton onClick={this.props.logout} text="Logout"}
           </Navbar.Collapse>
         </Navbar>
   )
@@ -30,6 +32,8 @@ import {Link, withRouter} from 'react-router-dom';
 const mapStateToProps = state => {
   return {
   items: state.cart.items,
-  price: state.cart.price
+  price: state.cart.price,
+  signed_in: state.user.signed_in
 }}
-export default withRouter(connect(mapStateToProps)(Navigation))
+const mapDispatchToProps = dispatch => indActionCreators({logout}, dispatch)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Navigation))

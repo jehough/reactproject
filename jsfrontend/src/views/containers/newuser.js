@@ -32,8 +32,8 @@ class NewUser extends Component {
 
 const mapStateToProps = state => {
   return {
-    signed_in: state.signed_in,
-    message: state.message
+    signed_in: state.user.signed_in,
+    message: state.user.message
   }
 }
 

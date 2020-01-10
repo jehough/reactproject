@@ -11,6 +11,12 @@ const userReducer = (state = {signed_in: false, auth_token: '', message: ''},act
         ...state,
         message: action.message
       }
+    case 'LOGOUT':
+      return{
+        signed_in: false,
+        auth_token: '',
+        message: ''
+      }
     default:
       return state
   }
