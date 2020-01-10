@@ -8,8 +8,15 @@ import {connect} from 'react-redux'
 import CheckoutForm from '../components/checkout_form'
 
 class Checkout extends Component {
-
-
+  constructor(){
+    super()
+    this.state = {
+      finished: false
+    }
+  }
+  handleResponse = (json) => {
+    alert(json.status)
+  }
 
   handleCheckout = (e) => {
     e.preventDefault()
@@ -28,11 +35,13 @@ class Checkout extends Component {
     console.log(object)
     fetch("http://localhost:4000/order", object)
       .then(resp => resp.json())
-      .then(json => console.log(json))
+      .then(json => this.handleResponse(json))
   }
 
   render(){
     return(<div>
+      {this.state.finished ? <Redirect to="/"/>:null}
+      {this.props.signed_in ? null:<Redirect to="/login"/> }
       <DisplayTitle title="Checkout" />
       <CheckoutForm handleCheckout={this.handleCheckout} />
     </div>)
