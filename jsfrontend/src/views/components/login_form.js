@@ -1,13 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 
-export default class LoginForm extends Component {
-
-  render(){
-    return(<div className="form">
-      <form onSubmit={this.props.handleSubmit}>
+ const LoginForm = props => (<div className="form">
+      <form onSubmit={props.handleSubmit}>
         <Form.Group controlId="email">
         <Form.Label>Email</Form.Label>
         <Form.Control type="email" name="email" placeholder="email@example.com" />
@@ -23,5 +20,4 @@ export default class LoginForm extends Component {
       </form>
 
     </div>)
-  }
-}
+export default LoginForm
