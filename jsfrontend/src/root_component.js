@@ -24,7 +24,7 @@ export default class RootComponent extends Component{
         <Navbar />
         <Route exact path="/" component={Home} />
         <Route exact path="/categories" render={routerProps => <Categories {...routerProps}/>} />
-        <Route path="/categories/:catID" component={Items} />
+        <Route path={`/categories/:catId`} component={Items}/>
         <Route path="/items/:itemID" component={ItemShow} />
         <Route exact path="/items" render={routerProps => <Items {...routerProps}/>} />
         <Route path="/cart" component={Cart} />

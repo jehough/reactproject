@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ItemRow from './item_row.js'
 
  const ItemList = props => (<div>

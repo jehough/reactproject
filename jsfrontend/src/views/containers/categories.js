@@ -5,7 +5,6 @@ import DisplayTitle from '../components/title.js'
 
 
 
-
 class Categories extends Component {
   constructor(){
     super()
@@ -31,6 +30,7 @@ class Categories extends Component {
       <CategoryList list={this.state.fishList}/>
       <DisplayTitle title={"Equipment"} />
       <CategoryList list={this.state.eqList} />
+
       </div>)
   }
 }

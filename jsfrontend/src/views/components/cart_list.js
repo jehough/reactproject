@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import LinkDisplay from './link.js'
-import ItemImage from './image.js'
+
 import CartRow from './cart_row.js'
-import Button from 'react-bootstrap/Button'
 import {removeItem} from '../../ducks/cart/actions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
