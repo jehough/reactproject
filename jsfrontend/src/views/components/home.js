@@ -1,10 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Carousel from 'react-bootstrap/Carousel'
 
-export default class Home extends Component {
-
-  render(){
-    return(<div>
+ const Home = () => (<div>
       <h1>Welcome</h1>
       <Carousel>
         <Carousel.Item>
@@ -18,5 +15,5 @@ export default class Home extends Component {
         </Carousel.Item>
       </Carousel>
     </div>)
-  }
-}
+
+export default Home
