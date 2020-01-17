@@ -1,14 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 
-export default class CheckoutForm extends Component {
-
-  render(){
-    return(<div className="form">
-      <form onSubmit={this.props.handleCheckout}>
+const CheckoutForm = props => (<div className="form">
+      <form onSubmit={props.handleCheckout}>
       <Form.Row>
         <Form.Group controlId="payment">
         <Form.Label>Form of Payment</Form.Label>
@@ -42,5 +39,4 @@ export default class CheckoutForm extends Component {
       </form>
 
     </div>)
-  }
-}
+export default CheckoutForm

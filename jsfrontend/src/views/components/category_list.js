@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import LinkDisplay from './link.js'
 
 const CategoryList = props => (<div>
