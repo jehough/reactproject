@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button';
-import {Redirect} from 'react-router-dom';
+import {Redirect, withRouter} from 'react-router-dom';
 
-export default class SearchBar extends Component {
+class SearchBar extends Component {
   constructor() {
     super()
     this.state = {
@@ -18,11 +18,11 @@ export default class SearchBar extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     this.setState({...this.state, showSearch: true})
-
   }
 
   render(){
     if(this.state.showSearch){
+      this.setState({...this.state, showSearch: false})
       return (<Redirect to={{pathname: '/items',
                   state: {term: this.state.term,
                           name: "Search Results",
@@ -36,3 +36,5 @@ export default class SearchBar extends Component {
   )
   }
 }
+
+export default withRouter(SearchBar)

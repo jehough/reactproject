@@ -27,9 +27,9 @@ export default class RootComponent extends Component{
         <Switch>
         <Route path="/categories/:catId" component={Items}/>
         <Route path="/categories" render={routerProps => <Categories {...routerProps}/>} />
+        </Switch>
         <Route path="/items/:itemID" component={ItemShow} />
         <Route exact path="/items" render={routerProps => <Items {...routerProps}/>} />
-        </Switch>
         <Route path="/cart" component={Cart} />
         <Route path="/login" component={Login} />
         <Route path="/newuser" component={NewUser} />
