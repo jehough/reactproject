@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import DisplayTitle from '../components/title'
 import LoginForm from '../components/login_form'
 import Button from 'react-bootstrap/Button'
-import Row from 'react-bootstrap/Row'
-import NewUser from './newuser'
 import {Redirect} from 'react-router-dom'
 import {makeObject} from '../functions/functions.js'
 import {login} from '../../ducks/user/actions.js'

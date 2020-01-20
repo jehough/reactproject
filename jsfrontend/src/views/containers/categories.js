@@ -1,12 +1,6 @@
 import React, {Component} from 'react';
 import CategoryList from '../components/category_list.js';
 import DisplayTitle from '../components/title.js';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
-import Items from './items'
 
 
 
