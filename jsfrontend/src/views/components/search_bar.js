@@ -17,7 +17,7 @@ class SearchBar extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.setState({...this.state, showSearch: true})
+    this.setState({term: e.target.term.value, showSearch: true})
   }
 
   render(){
@@ -25,12 +25,12 @@ class SearchBar extends Component {
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
-              <input type="text" placeholder="Search Our Products" className="searchBox" onChange={this.handleChange}/>
+              <input type="text" placeholder="Search Our Products" className="searchBox" name="term"/>
               <Button variant="light" type="submit">Search</Button>
         </form>
 
         {this.state.showSearch ? (
-        <Redirect to={{pathname: '/items',
+        <Redirect to={{pathname: `/items`,
                     state: {term: this.state.term,
                             name: "Search Results",
                             url:"http://localhost:4000/items"}}} />):null}
