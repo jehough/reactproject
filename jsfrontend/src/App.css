@@ -63,5 +63,6 @@ li {
   width: 80%;
 }
 .cartblurb{
-  padding-right: 2%;
+  padding-right: 3%;
+  white-space: nowrap;
 }
