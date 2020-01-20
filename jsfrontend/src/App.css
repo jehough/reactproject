@@ -57,18 +57,11 @@ li {
   width: 35%;
   height: 35%
 }
-
 .form {
+  padding-left: 20%;
   justify-content: center;
-  padding-left: 5%;
-  width: 80%
+  width: 80%;
 }
-
-.form-container{
-  justify-content: center;
-
-}
-
 .cartblurb{
   padding-right: 2%;
 }
