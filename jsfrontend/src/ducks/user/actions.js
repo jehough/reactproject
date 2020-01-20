@@ -1,3 +1,5 @@
+export const login = (object)
+
 export const handleUserResponse = (json) => {
   if (json.status === "error"){
     return {
@@ -8,7 +10,8 @@ export const handleUserResponse = (json) => {
   else if(json.auth_token){
     return {
       type: "SIGN IN USER",
-      auth_token: json.auth_token
+      auth_token: json.auth_token,
+      message: ''
     }
   }
 }
