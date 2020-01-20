@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 import CategoryList from '../components/category_list.js';
-import DisplayTitle from '../components/title.js'
-
+import DisplayTitle from '../components/title.js';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+import Items from './items'
 
 
 
@@ -20,17 +25,21 @@ class Categories extends Component {
     this.setState({fishList: fishList, eqList: eqList})
   }
   componentDidMount(){
+    console.log("c")
    fetch(`http://localhost:4000/categories`)
      .then(resp=> resp.json())
-     .then(json => this.divideLists(json))
- }
+     .then(json => {
+       console.log("b")
+       this.divideLists(json)
+     })
+      console.log("a")
+    }
   render(){
     return(<div>
       <DisplayTitle title={"Fish and Marine Life"} />
       <CategoryList list={this.state.fishList}/>
       <DisplayTitle title={"Equipment"} />
       <CategoryList list={this.state.eqList} />
-
       </div>)
   }
 }

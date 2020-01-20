@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import {
   BrowserRouter as Router,
+  Switch,
   Route,
 } from 'react-router-dom';
 import Home from './views/components/home'
@@ -23,10 +24,12 @@ export default class RootComponent extends Component{
       <div className="App">
         <Navbar />
         <Route exact path="/" component={Home} />
-        <Route exact path="/categories" render={routerProps => <Categories {...routerProps}/>} />
-        <Route path={`/categories/:catId`} component={Items}/>
+        <Switch>
+        <Route path="/categories/:catId" component={Items}/>
+        <Route path="/categories" render={routerProps => <Categories {...routerProps}/>} />
         <Route path="/items/:itemID" component={ItemShow} />
         <Route exact path="/items" render={routerProps => <Items {...routerProps}/>} />
+        </Switch>
         <Route path="/cart" component={Cart} />
         <Route path="/login" component={Login} />
         <Route path="/newuser" component={NewUser} />

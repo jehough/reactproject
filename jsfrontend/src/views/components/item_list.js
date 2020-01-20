@@ -4,7 +4,7 @@ import ItemRow from './item_row.js'
  const ItemList = props => (<div>
       <table>
       <tbody>
-        {props.list.map(item => <ItemRow item={item}/>)}
+        {props.list.map(item => <ItemRow key={item.id} item={item}/>)}
       </tbody>
       </table>
 
