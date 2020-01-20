@@ -12,7 +12,7 @@ class SearchBar extends Component {
   }
 
   handleChange = (event) => {
-    this.setState({term: event.target.value})
+    this.setState({...this.state, term: event.target.value})
   }
 
   handleSubmit = (e) => {
@@ -21,18 +21,21 @@ class SearchBar extends Component {
   }
 
   render(){
-    if(this.state.showSearch){
-      this.setState({...this.state, showSearch: false})
-      return (<Redirect to={{pathname: '/items',
-                  state: {term: this.state.term,
-                          name: "Search Results",
-                          url:"http://localhost:4000/items"}}} />)
-    }
+
     return(
+      <div>
         <form onSubmit={this.handleSubmit}>
               <input type="text" placeholder="Search Our Products" className="searchBox" onChange={this.handleChange}/>
               <Button variant="light" type="submit">Search</Button>
         </form>
+
+        {this.state.showSearch ? (
+        <Redirect to={{pathname: '/items',
+                    state: {term: this.state.term,
+                            name: "Search Results",
+                            url:"http://localhost:4000/items"}}} />):null}
+
+      </div>
   )
   }
 }

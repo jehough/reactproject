@@ -19,14 +19,13 @@ class Categories extends Component {
     this.setState({fishList: fishList, eqList: eqList})
   }
   componentDidMount(){
-    console.log("c")
+
    fetch(`http://localhost:4000/categories`)
      .then(resp=> resp.json())
-     .then(json => {
-       console.log("b")
+     .then(json =>
        this.divideLists(json)
-     })
-      console.log("a")
+     )
+      
     }
   render(){
     return(<div>
