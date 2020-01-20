@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 import NewUser from './newuser'
 import {Redirect} from 'react-router-dom'
 import {makeObject} from '../functions/functions.js'
-import {handleUserResponse} from '../../ducks/user/actions.js'
+import {login} from '../../ducks/user/actions.js'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
@@ -28,10 +28,8 @@ class Login extends Component {
                       email: form.email.value,
                       password: form.password.value}
     const object = makeObject("POST", formData)
-    fetch("http://localhost:4000/authenticate", object)
-      .then(resp => resp.json())
-      .then(json => this.props.handleUserResponse(json))
-    
+    this.props.login(object)
+
   }
   render(){
     return(<div className="form-container">
@@ -54,6 +52,6 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({handleUserResponse}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({login}, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

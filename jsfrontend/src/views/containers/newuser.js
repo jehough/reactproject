@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import DisplayTitle from '../components/title'
 import LoginForm from '../components/login_form'
 import {makeObject} from '../functions/functions.js'
-import {handleUserResponse} from '../../ducks/user/actions.js'
+import {newAccount} from '../../ducks/user/actions.js'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
@@ -37,6 +37,6 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({handleUserResponse}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({newAccount}, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewUser)

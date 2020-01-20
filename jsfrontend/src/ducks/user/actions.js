@@ -1,19 +1,49 @@
-export const login = (object)
+export const login = (object) => {
+  return (dispatch) =>
+  {
+    fetch("http://localhost:4000/authenticate", object)
+    .then(resp => resp.json())
+    .then(json => {
+      if (json.status === "error"){
+        dispatch ({
+          type: "UPDATE ERRORS",
+          message: json.message
+        })
+      }
+      else if(json.auth_token){
+        dispatch( {
+          type: "SIGN IN USER",
+          auth_token: json.auth_token,
+          message: ''
+        })
+      }
+    }
 
-export const handleUserResponse = (json) => {
-  if (json.status === "error"){
-    return {
-      type: "UPDATE ERRORS",
-      message: json.message
+    )}
+}
+
+export const newAccount = (object) => {
+  return (dispatch) =>
+  {
+    fetch("http://localhost:4000/user", object)
+    .then(resp => resp.json())
+    .then(json => {
+      if (json.status === "error"){
+        dispatch ({
+          type: "UPDATE ERRORS",
+          message: json.message
+        })
+      }
+      else if(json.auth_token){
+        dispatch( {
+          type: "SIGN IN USER",
+          auth_token: json.auth_token,
+          message: ''
+        })
+      }
     }
-  }
-  else if(json.auth_token){
-    return {
-      type: "SIGN IN USER",
-      auth_token: json.auth_token,
-      message: ''
-    }
-  }
+
+    )}
 }
 
 export const logout = () => {
