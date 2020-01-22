@@ -1,9 +1,11 @@
 export const login = (object) => {
+  console.log("c")
   return (dispatch) =>
   {
     fetch("http://localhost:4000/authenticate", object)
     .then(resp => resp.json())
     .then(json => {
+      console.log("d")
       if (json.status === "error"){
         dispatch ({
           type: "UPDATE ERRORS",
@@ -20,6 +22,7 @@ export const login = (object) => {
     }
 
     )}
+    console.log("e")
 }
 
 export const newAccount = (object) => {

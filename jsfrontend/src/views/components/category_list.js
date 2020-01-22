@@ -3,7 +3,7 @@ import LinkDisplay from './link.js'
 
 const CategoryList = props => (<div>
       <ul>
-      {props.list.map(category => <li key={category.id}><LinkDisplay object={category} path="categories" /></li>)}
+      {props.list.filter(category => category.attributes.name.includes(props.input)).map(category => <li key={category.id}><LinkDisplay object={category} path="categories" /></li>)}
       </ul>
     </div>)
 

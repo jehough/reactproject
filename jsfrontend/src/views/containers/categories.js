@@ -8,6 +8,7 @@ class Categories extends Component {
   constructor(){
     super()
     this.state = {
+      input: '',
       fishList: [],
       eqList: []
     }
@@ -16,7 +17,13 @@ class Categories extends Component {
   divideLists = (json) => {
     const fishList = json.data.filter(obj => obj.attributes.division === "Fish and Marine Life")
     const eqList = json.data.filter(obj => obj.attributes.division === "Equipment")
-    this.setState({fishList: fishList, eqList: eqList})
+    this.setState({fishList, eqList})
+  }
+
+  handleChange = (e) => {
+    const input = e.target.value
+    this.setState({input})
+
   }
   componentDidMount(){
 
@@ -25,14 +32,15 @@ class Categories extends Component {
      .then(json =>
        this.divideLists(json)
      )
-      
+
     }
   render(){
     return(<div>
       <DisplayTitle title={"Fish and Marine Life"} />
-      <CategoryList list={this.state.fishList}/>
+      <input type="text" onChange={this.handleChange} />
+      <CategoryList list={this.state.fishList} input={this.state.input}/>
       <DisplayTitle title={"Equipment"} />
-      <CategoryList list={this.state.eqList} />
+      <CategoryList list={this.state.eqList} input={this.state.input} />
       </div>)
   }
 }

@@ -27,7 +27,9 @@ class Login extends Component {
                       email: form.email.value,
                       password: form.password.value}
     const object = makeObject("POST", formData)
+    console.log("a")
     this.props.login(object)
+    console.log("b")
 
   }
   render(){
