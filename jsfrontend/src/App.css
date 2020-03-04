@@ -50,11 +50,19 @@ li {
 }
 
 .previewImg {
-  width: 100px;
-  height: 100px;
+  width: 8em;
+  height: 8em;
 }
-
 .showImage {
-  width: 50%;
-  height: 50%
+  width: 35%;
+  height: 35%
+}
+.form {
+  padding-left: 20%;
+  justify-content: center;
+  width: 80%;
+}
+.cartblurb{
+  padding-right: 2%;
+  white-space: nowrap;
 }

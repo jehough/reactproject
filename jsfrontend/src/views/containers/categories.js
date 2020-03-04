@@ -1,33 +1,47 @@
 import React, {Component} from 'react';
 import CategoryList from '../components/category_list.js';
-import DisplayTitle from '../components/title.js'
-import {
-  BrowserRouter as Router,
-  Link,
-  Route
-} from 'react-router-dom'
-import Items from './items'
+import DisplayTitle from '../components/title.js';
 
 
 
-export default class Categories extends Component {
+class Categories extends Component {
   constructor(){
     super()
     this.state = {
-      list: []
+      input: '',
+      fishList: [],
+      eqList: []
     }
   }
 
- componentDidMount(){
-   fetch(`http://localhost:4000/${this.props.division}`)
+  divideLists = (json) => {
+    const fishList = json.data.filter(obj => obj.attributes.division === "Fish and Marine Life")
+    const eqList = json.data.filter(obj => obj.attributes.division === "Equipment")
+    this.setState({fishList, eqList})
+  }
+
+  handleChange = (e) => {
+    const input = e.target.value
+    this.setState({input})
+
+  }
+  componentDidMount(){
+
+   fetch(`http://localhost:4000/categories`)
      .then(resp=> resp.json())
-     .then(json => this.setState({list: json.data}))
- }
+     .then(json =>
+       this.divideLists(json)
+     )
+
+    }
   render(){
     return(<div>
-      <DisplayTitle title={this.props.title} />
-      <CategoryList list={this.state.list}/>
-
+      <DisplayTitle title={"Fish and Marine Life"} />
+      <input type="text" onChange={this.handleChange} />
+      <CategoryList list={this.state.fishList} input={this.state.input}/>
+      <DisplayTitle title={"Equipment"} />
+      <CategoryList list={this.state.eqList} input={this.state.input} />
       </div>)
   }
 }
+export default Categories
