@@ -32,43 +32,43 @@ salee = Category.create(name: "Equipment on Sale", division: equipment)
 #Initial Items
 gourami = Item.create(name: "Honey Gourami", quantity: 20, description: "Random stuff to get started", price: 7.99, gender: "N/A")
 gourami.image.attach(
-  io: File.open('/home/jim/Pictures/FishImages/HoneyGourami.jpg'),
+  io: File.open('C:\Users\teach\OneDrive\Desktop\Fishimages\HoneyGourami.jpg'),
   filename: 'HoneyGourami.jpg',
 )
 community.items << gourami
 
 neon = Item.create(name: "Neon", quantity: 40, description: "Random stuff to get started", price: 2.99, gender: "N/A")
 neon.image.attach(
-  io: File.open('/home/jim/Pictures/FishImages/neon-tetra.jpg'),
+  io: File.open('C:\Users\teach\OneDrive\Desktop\Fishimages\neon-tetra.jpg'),
   filename: 'neon-tetra.jpg',
 )
 community.items << neon
 
 peacock = Item.create(name: "Red Sun Peacock Cichlid", quantity: 10, description: "Random stuff to get started", price: 12.99, gender: "Male")
 peacock.image.attach(
-  io: File.open('/home/jim/Pictures/FishImages/peacock.jpeg'),
-  filename: 'peacock.jpeg',
+  io: File.open('C:\Users\teach\OneDrive\Desktop\Fishimages\peacock.jpg'),
+  filename: 'peacock.jpg',
 )
 african.items << peacock
 
 frontosa = Item.create(name: "Frontosa Cichlid", quantity: 10, description: "Random stuff to get started", price: 12.99, gender: "Female")
 frontosa.image.attach(
-  io: File.open('/home/jim/Pictures/FishImages/frontosa.jpeg'),
-  filename: 'frontosa.jpeg',
+  io: File.open('C:\Users\teach\OneDrive\Desktop\Fishimages\frontosa.jpg'),
+  filename: 'frontosa.jpg',
 )
 african.items << frontosa
 
 jack = Item.create(name: "Jack Dempsy Cichlid", quantity: 10, description: "Random stuff to get started", price: 12.99, gender: "Female")
 jack.image.attach(
-  io: File.open('/home/jim/Pictures/FishImages/jackDempsy.jpeg'),
-  filename: 'jackDempsy.jpeg',
+  io: File.open('C:\Users\teach\OneDrive\Desktop\Fishimages\jackDempsey.jpg'),
+  filename: 'jackDempsey.jpg',
 )
 south.items << jack
 
 ram = Item.create(name: "Ram Cichlid", quantity: 10, description: "Random stuff to get started", price: 12.99, gender: "Female")
 ram.image.attach(
-  io: File.open('/home/jim/Pictures/FishImages/ram.jpeg'),
-  filename: 'ram.jpeg',
+  io: File.open('C:\Users\teach\OneDrive\Desktop\Fishimages\ram.jpg'),
+  filename: 'ram.jpg',
 )
 south.items << ram
 
@@ -76,15 +76,15 @@ salef.items << jack
 
 tengal = Item.create(name: "Ten Gallon Kit", quantity: 15, description: "Random stuff to get started", price: 25.99, gender: "N/A")
 tengal.image.attach(
-  io: File.open('/home/jim/Pictures/FishImages/tengal.jpeg'),
-  filename: 'tengal.jpeg',
+  io: File.open('C:\Users\teach\OneDrive\Desktop\Fishimages\tengal.jpg'),
+  filename: 'tengal.jpg',
 )
 aquarium.items << tengal
 
 twengal = Item.create(name: "Twenty Gallon Kit", quantity: 15, description: "Random stuff to get started", price: 35.99, gender: "N/A")
 twengal.image.attach(
-  io: File.open('/home/jim/Pictures/FishImages/twengal.jpeg'),
-  filename: 'twengal.jpeg',
+  io: File.open('C:\Users\teach\OneDrive\Desktop\Fishimages\twengal.jpg'),
+  filename: 'twengal.jpg',
 )
 aquarium.items << twengal
 
